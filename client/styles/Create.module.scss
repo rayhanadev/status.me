@@ -1,0 +1,257 @@
+@use 'utils/pallette' as *;
+@use 'utils/include-media' as *;
+
+.cardBox {
+	margin: 0;
+	margin-top: -5rem;
+
+	@include media('<=tablet') {
+		margin: 0;
+	}
+}
+
+.submitBtn {
+	appearance: none;
+	margin: 1rem 0;
+	margin-left: 3.5rem;
+
+	width: 35%;
+	height: 4rem;
+
+	background: none;
+	color: #000;
+
+	font-size: 1.6rem;
+	font-family: $fonts;
+
+	outline: none;
+	border: 0.675rem solid #49b6b6;
+	border-radius: 10rem;
+
+	cursor: pointer;
+
+	@include media('<=tablet') {
+		width: 75%;
+		margin-left: 1.75rem;
+		border: 0.4475rem solid #49b6b6;
+	}
+}
+
+.editor {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	vertical-align: bottom;
+	align-content: bottom;
+	margin: 0 auto;
+	margin-top: 1rem;
+	width: 63.45rem;
+
+	@include media('<=tablet') {
+		width: 85%;
+	}
+
+	.card {
+		position: relative;
+		display: flex;
+		align-content: center;
+		justify-content: center;
+		width: 75rem;
+		min-height: 30.5rem;
+		border: 0.675rem solid #49b6b6;
+		border-radius: 0.5rem;
+		margin: auto;
+		margin-top: 12rem;
+		margin-left: 3.5rem;
+		margin-bottom: 0rem;
+
+		@include media('<=tablet') {
+			border: 0.4475rem solid #49b6b6;
+			border-radius: 0.25rem;
+			min-height: 31.5rem;
+			margin-top: 6rem;
+			margin-left: 1.75rem;
+		}
+
+		.profilepic {
+			position: absolute;
+			top: -12.65rem;
+			left: -4.15rem;
+			width: 15rem;
+			height: 15rem;
+			border-radius: 50%;
+			border: 0.675rem solid #000;
+			overflow: hidden;
+
+			@include media('<=tablet') {
+				top: -6.325rem;
+				left: -2.075rem;
+				width: 9.5rem;
+				height: 9.5rem;
+				border: 0.4475rem solid #000;
+			}
+		}
+
+		.status {
+			position: absolute;
+			display: flex;
+			top: -2.45rem;
+			left: 8.4rem;
+
+			min-width: 15rem;
+			max-width: 20rem;
+			height: 3rem;
+
+			background-color: #fff;
+			border: 0.675rem solid #49b6b6;
+			border-radius: 10rem;
+
+			.icon {
+				margin: auto 0.45rem;
+				font-size: 2rem;
+				color: #49b6b6;
+			}
+
+			.switch {
+				margin: auto 0.45rem;
+				margin-right: 1.25rem;
+				font-size: 1.5rem;
+				color: #3c3c3c;
+			}
+
+			.text {
+				border: none;
+				outline: none;
+				height: 2.447rem;
+				width: 65%;
+				font-family: $fonts;
+				font-size: 1.6rem;
+				padding-bottom: 0;
+			}
+
+			@include media('<=tablet') {
+				position: absolute;
+				top: -1.5375rem;
+				left: 6.4rem;
+
+				border: 0.4474rem solid #49b6b6;
+				border-radius: 10rem;
+				max-width: 20rem;
+
+				.icon {
+					margin-top: 0.35rem;
+					font-size: 1.5rem;
+				}
+
+				.switch {
+					margin-top: 0.35rem;
+					font-size: 1.5rem;
+				}
+			}
+		}
+
+		.picker {
+			position: absolute;
+			margin-top: 2rem;
+			margin-left: -6rem;
+			em-emoji-picker {
+				max-height: 20rem;
+			}
+
+			@include media('<=tablet') {
+				margin: 0;
+				padding: 0;
+				width: 100%;
+				left: 50%;
+				transform: translate(-50%, 0);
+
+				em-emoji-picker {
+					min-width: auto;
+					max-width: auto;
+					width: 100%;
+					margin: 0;
+					max-height: 50rem;
+				}
+			}
+		}
+
+		.type {
+			position: absolute;
+			margin: 0;
+			height: 4rem;
+
+			top: -6rem;
+			right: -0.65rem;
+
+			background-color: #fff;
+			border: 0.675rem solid #49b6b6;
+			border: {
+				top-left-radius: 50rem;
+				bottom-left-radius: 50rem;
+				top-right-radius: 10rem;
+				bottom-right-radius: 10rem;
+			}
+
+			font-family: $fonts;
+			font-size: 2rem;
+			line-height: inherit;
+			color: #000;
+
+			@include media('<=tablet') {
+				top: -6rem;
+				right: -0.45rem;
+				border: 0.4474rem solid #49b6b6;
+				min-width: 6rem;
+			}
+		}
+
+		.content {
+			width: 65%;
+			margin: auto;
+			height: auto;
+
+			.body {
+				width: 85%;
+				margin: auto;
+				margin-top: 10%;
+				margin-bottom: 0;
+
+				background: none;
+				outline: none;
+				border: none;
+
+				font-size: 5rem;
+				font-family: $fonts;
+			}
+
+			.author {
+				width: 85%;
+				margin-top: 0;
+
+				background: none;
+				outline: none;
+				border: none;
+
+				font-size: 3.2rem;
+				font-family: $fonts;
+			}
+
+			@include media('<=tablet') {
+				width: 75%;
+
+				.body {
+					font-size: 4.8rem;
+					margin: auto;
+					margin-top: 10%;
+					margin-bottom: 0.4rem;
+				}
+
+				.author {
+					font-size: 2.8rem;
+					margin-top: 0.4rem;
+					margin-bottom: 4rem;
+				}
+			}
+		}
+	}
+}

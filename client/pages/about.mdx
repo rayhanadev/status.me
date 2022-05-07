@@ -1,0 +1,19 @@
+import Head from '../components/Head/Head.js';
+import Nav from '../components/Navigation/Navigation.js';
+import { useAuth } from '../libs/auth.js';
+
+export const Navigation = () => {
+	const { isSignedIn } = useAuth();
+	return <Nav isSignedIn={isSignedIn()} />
+}
+
+# - about -
+
+<Navigation />
+
+This is status.me, a free website where you can post
+regular status updates and link to your social platforms!
+This website also gives you allows you to follow your mental
+health over time to make yourself the healthiest you
+possible! Created by
+[@rayhanadev](https://rayhanadev.vercel.app)

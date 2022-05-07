@@ -1,0 +1,124 @@
+type Query {
+	currentUser: User
+
+	post(id: String!): Post
+	mood(id: String!): Mood
+
+	posts(
+		after: String
+		count: Int
+		order: PostOrder
+		unlisted: Boolean
+	): PostConnection
+
+	moods(after: String, count: Int, order: MoodOrder): MoodConnection
+}
+
+type Mutation {
+	signup(email: String!, username: String!, password: String!): AuthPayload
+	login(username: String!, password: String!): AuthPayload
+
+	createPost(createPostInput: CreatePostInput!): CreatePostPayload
+	updatePost(updatePostInput: UpdatePostInput!): UpdatePostPayload
+	deletePost(deletePostInput: DeletePostInput!): DeletePostPayload
+}
+
+enum MoodOrder {
+	NEW
+	OLD
+}
+
+enum PostType {
+	POST
+	QUOTE
+	LYRICS
+}
+
+enum PostOrder {
+	HOT
+	TOP
+	NEW
+	OLD
+}
+
+type PageInfo {
+	hasNext: Boolean!
+	nextCursor: String
+	previousCursor: String
+}
+
+type UserError {
+	message: String!
+}
+
+type User {
+	username: String!
+	email: String!
+	name: String
+	pronouns: String
+}
+
+type Auth {
+	user: User
+	token: String
+}
+
+union AuthPayload = Auth | UserError
+
+type Mood {
+	id: String!
+	timestamp: String!
+	color: String!
+	emoji: String!
+	message: String!
+}
+
+type Post {
+	id: String!
+	timestamp: String!
+	type: PostType!
+	message: String!
+	author: String
+	mood: Mood!
+}
+
+input MoodInput {
+	color: String!
+	emoji: String!
+	message: String!
+}
+
+input CreatePostInput {
+	type: PostType!
+	message: String!
+	author: String
+	mood: MoodInput
+	moodRef: String
+}
+
+input UpdatePostInput {
+	id: String!
+	type: PostType
+	message: String
+	author: String
+	mood: MoodInput
+	moodRef: String
+}
+
+input DeletePostInput {
+	id: String!
+}
+
+union CreatePostPayload = Post | UserError
+union UpdatePostPayload = Post | UserError
+union DeletePostPayload = Post | UserError
+
+type PostConnection {
+	pageInfo: PageInfo!
+	items: [Post!]!
+}
+
+type MoodConnection {
+	pageInfo: PageInfo!
+	items: [Mood!]!
+}

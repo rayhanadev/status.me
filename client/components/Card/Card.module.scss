@@ -1,0 +1,703 @@
+@use '../../styles/utils/pallette' as *;
+@use '../../styles/utils/include-media' as *;
+
+/*
+	Small Cards
+	to be used in gallerys, etc.
+*/
+
+.card_small {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	vertical-align: bottom;
+	align-content: bottom;
+
+	margin: 1rem auto;
+	width: 31.5rem;
+
+	@include media('<=tablet') {
+		width: 31.5rem;
+	}
+
+	.card {
+		position: relative;
+		display: flex;
+		align-content: center;
+		justify-content: center;
+		width: 27.5rem;
+		min-height: 14.5rem;
+		border: 0.3375rem solid #49b6b6;
+		border-radius: 0.25rem;
+		margin: auto;
+		margin-top: 6rem;
+		margin-left: 1.75rem;
+		margin-bottom: 0rem;
+
+		@include media('<=tablet') {
+			border: 0.4475rem solid #49b6b6;
+			border-radius: 0.25rem;
+			width: 31.5rem;
+			min-height: 31.5rem;
+			margin-left: 0;
+		}
+
+		.profilepic {
+			position: absolute;
+			top: -6.325rem;
+			left: -2.075rem;
+			width: 7.5rem;
+			height: 7.5rem;
+			border-radius: 50%;
+			border: 0.3375rem solid #000;
+			overflow: hidden;
+
+			@include media('<=tablet') {
+				top: -10.325rem;
+				transform: translate(-50%, 0);
+				left: 50%;
+				width: 9.5rem;
+				height: 9.5rem;
+				border: 0.4475rem solid #000;
+			}
+		}
+
+		.status {
+			position: absolute;
+			display: flex;
+			top: -1.5375rem;
+			left: 3.2rem;
+
+			min-width: 1.875rem;
+			max-width: 1.875rem;
+			height: 1.875rem;
+
+			background-color: #fff;
+			border: 0.3375rem solid #49b6b6;
+			border-radius: 50%;
+
+			transition: max-width 1.5s ease, border-radius 0.75s ease;
+
+			overflow: hidden;
+
+			.icon {
+				margin: auto;
+				margin-top: 0.2rem;
+				font-size: 1rem;
+			}
+
+			.text {
+				display: none;
+				margin: auto 0;
+				font-size: 1.2rem;
+			}
+
+			&:hover,
+			&:focus {
+				border-radius: 10rem;
+				max-width: 20rem;
+
+				.icon {
+					margin: auto 0.35rem;
+				}
+
+				.text {
+					margin: {
+						top: -0.15rem;
+						right: 1.5rem;
+						bottom: auto;
+					}
+					display: block;
+				}
+			}
+
+			@include media('<=tablet') {
+				position: absolute;
+				top: -1.65rem;
+				left: 50%;
+				transform: translate(-50%, 0);
+				margin: 0 auto;
+
+				border: 0.4474rem solid #49b6b6;
+				border-radius: 10rem;
+				max-width: 20rem;
+				height: 2.175rem;
+
+				.icon {
+					font-size: 1.2rem;
+					margin: auto 0.35rem;
+					margin-right: 0;
+				}
+
+				.text {
+					margin: {
+						top: -0.35rem;
+						left: 0.5rem;
+						right: 1.5rem;
+						bottom: auto;
+					}
+					display: block;
+					font-size: 1.6rem;
+				}
+
+				&:hover,
+				&:focus {
+					border-radius: 10rem;
+					max-width: 20rem;
+
+					.icon {
+						margin-right: 0;
+						font-size: 1.2rem;
+					}
+
+					.text {
+						margin: {
+							top: -0.35rem;
+							left: 0.5rem;
+							right: 1.5rem;
+							bottom: auto;
+						}
+						display: block;
+						font-size: 1.6rem;
+					}
+				}
+			}
+		}
+
+		.content {
+			width: 65%;
+			margin: auto;
+			height: auto;
+
+			.body {
+				font-size: 3.2rem;
+				margin: auto;
+				margin-top: 10%;
+				margin-bottom: 0.4rem;
+			}
+
+			.author {
+				font-size: 3.2rem;
+				margin-top: 0.4rem;
+			}
+
+			@include media('<=tablet') {
+				width: 75%;
+
+				.body {
+					font-size: 3.2rem;
+					margin: auto;
+					margin-top: 10%;
+					margin-bottom: 0.4rem;
+				}
+
+				.author {
+					font-size: 2.8rem;
+					margin-top: 0.4rem;
+					margin-bottom: 4rem;
+				}
+			}
+		}
+	}
+}
+
+/*
+	Large Cards
+	to be used on homepages, past posts, etc.
+*/
+
+.card_large {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	vertical-align: bottom;
+	align-content: bottom;
+	margin: 0 auto;
+	margin-top: 1rem;
+	width: 63.45rem;
+
+	@include media('<=tablet') {
+		width: 85%;
+	}
+
+	.card {
+		position: relative;
+		display: flex;
+		align-content: center;
+		justify-content: center;
+		width: 75rem;
+		min-height: 30.5rem;
+		border: 0.675rem solid #49b6b6;
+		border-radius: 0.5rem;
+		margin: auto;
+		margin-top: 12rem;
+		margin-left: 3.5rem;
+		margin-bottom: 0rem;
+
+		@include media('<=tablet') {
+			border: 0.4475rem solid #49b6b6;
+			border-radius: 0.25rem;
+			min-height: 31.5rem;
+			margin-left: 0;
+		}
+
+		.profilepic {
+			position: absolute;
+			top: -12.65rem;
+			left: -4.15rem;
+			width: 15rem;
+			height: 15rem;
+			border-radius: 50%;
+			border: 0.675rem solid #000;
+			overflow: hidden;
+
+			@include media('<=tablet') {
+				top: -12.325rem;
+				transform: translate(-50%, 0);
+				left: 50%;
+				width: 12.5rem;
+				height: 12.5rem;
+				border: 0.4475rem solid #000;
+			}
+		}
+
+		.status {
+			position: absolute;
+			display: flex;
+			top: -2.45rem;
+			left: 8.4rem;
+
+			min-width: 3rem;
+			max-width: 3rem;
+			height: 3rem;
+
+			background-color: #fff;
+			border: 0.675rem solid #49b6b6;
+			border-radius: 50%;
+
+			transition: max-width 1.5s ease, border-radius 0.75s ease;
+
+			overflow: hidden;
+
+			.icon {
+				margin: auto;
+				margin-top: 0.1rem;
+				margin-left: 0.35rem;
+				font-size: 2rem;
+			}
+
+			.text {
+				display: none;
+				margin: auto 0;
+				font-size: 2rem;
+			}
+
+			&:hover,
+			&:focus {
+				border-radius: 10rem;
+				max-width: 20rem;
+
+				.icon {
+					margin: auto 0.35rem;
+					margin-top: 0.1rem;
+				}
+
+				.text {
+					margin: {
+						top: -0.3rem;
+						right: 1.5rem;
+						bottom: auto;
+					}
+					display: block;
+				}
+			}
+
+			@include media('<=tablet') {
+				position: absolute;
+				top: -1.65rem;
+				left: 50%;
+				transform: translate(-50%, 0);
+				margin: 0 auto;
+
+				border: 0.4474rem solid #49b6b6;
+				border-radius: 10rem;
+				max-width: 75rem;
+				height: 2.175rem;
+
+				.icon {
+					margin-top: -0.1rem;
+					font-size: 1.5rem;
+				}
+
+				.text {
+					margin: {
+						top: -0.35rem;
+						left: 0.5rem;
+						right: 1.5rem;
+						bottom: auto;
+					}
+					display: block;
+					font-size: 1.6rem;
+				}
+
+				&:hover,
+				&:focus {
+					border-radius: 10rem;
+					max-width: 20rem;
+
+					.icon {
+						margin-right: 0;
+						font-size: 1.5rem;
+					}
+
+					.text {
+						margin: {
+							top: -0.35rem;
+							left: 0.5rem;
+							right: 1.5rem;
+							bottom: auto;
+						}
+						display: block;
+						font-size: 1.6rem;
+					}
+				}
+			}
+		}
+
+		.timestamp {
+			position: absolute;
+			margin: 0 auto;
+
+			top: -6rem;
+			right: -0.65rem;
+
+			background-color: #fff;
+			border: 0.675rem solid #49b6b6;
+			border: {
+				top-left-radius: 50rem;
+				bottom-left-radius: 50rem;
+				top-right-radius: 10rem;
+				bottom-right-radius: 10rem;
+			}
+
+			display: flex;
+			align-content: center;
+			justify-content: center;
+
+			.text {
+				width: auto;
+				margin: {
+					top: -0.5rem;
+					left: 1rem;
+					right: 1rem;
+					bottom: auto;
+				}
+				font-size: 1.8rem;
+			}
+
+			@include media('<=tablet') {
+				top: 1.5rem;
+				left: 50%;
+				transform: translate(-50%, 0);
+				border: 0.4474rem solid #49b6b6;
+				border-radius: 50rem;
+				width: auto;
+				min-width: 20rem;
+				height: 2.175rem;
+
+				.text {
+					width: auto;
+					margin: {
+						top: -0.35rem;
+						left: 0.5rem;
+						right: 0.5rem;
+						bottom: auto;
+					}
+					font-size: 1.4rem;
+				}
+			}
+		}
+
+		.content {
+			width: 65%;
+			margin: auto;
+			height: auto;
+
+			.body {
+				font-size: 5rem;
+				margin: auto;
+				margin-top: 10%;
+				margin-bottom: 0.4rem;
+			}
+
+			.author {
+				font-size: 3.2rem;
+				margin-top: 0.4rem;
+			}
+
+			@include media('<=tablet') {
+				width: 75%;
+
+				.body {
+					font-size: 4.8rem;
+					margin: auto;
+					margin-top: 10%;
+					margin-bottom: 0.4rem;
+				}
+
+				.author {
+					font-size: 2.8rem;
+					margin-top: 0.4rem;
+					margin-bottom: 4rem;
+				}
+			}
+		}
+	}
+}
+
+/*
+	Wide Cards
+	to be used in gallerys, etc.
+*/
+
+.card_wide {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	vertical-align: bottom;
+	align-content: bottom;
+
+	margin: 1rem auto;
+	width: 75%;
+
+	.card {
+		position: relative;
+		display: flex;
+		align-content: center;
+		justify-content: center;
+		width: 90%;
+		min-height: 14.5rem;
+		border: 0.675rem solid #49b6b6;
+		border-radius: 0.25rem;
+		margin: auto;
+		margin-top: 8rem;
+		margin-left: 3.5rem;
+		margin-bottom: 0rem;
+
+		@include media('<=tablet') {
+			border: 0.4475rem solid #49b6b6;
+			border-radius: 0.25rem;
+			min-height: 15rem;
+			margin-left: 1.75rem;
+		}
+
+		.profilepic {
+			position: absolute;
+			top: -8.65rem;
+			left: -4.15rem;
+			width: 11.5rem;
+			height: 11.5rem;
+			border-radius: 50%;
+			border: 0.675rem solid #000;
+			overflow: hidden;
+
+			@include media('<=tablet') {
+				top: -6.325rem;
+				left: -2.075rem;
+				width: 9.5rem;
+				height: 9.5rem;
+				border: 0.4475rem solid #000;
+			}
+		}
+
+		.status {
+			position: absolute;
+			display: flex;
+			top: -2.45rem;
+			left: 6.2rem;
+
+			min-width: 3rem;
+			max-width: 3rem;
+			height: 3rem;
+
+			background-color: #fff;
+			border: 0.675rem solid #49b6b6;
+			border-radius: 50%;
+
+			transition: max-width 1.5s ease, border-radius 0.75s ease;
+
+			overflow: hidden;
+
+			.icon {
+				margin: auto;
+				margin-left: 0.35rem;
+				font-size: 2rem;
+			}
+
+			.text {
+				display: none;
+				margin: auto 0;
+				font-size: 2rem;
+			}
+
+			&:hover,
+			&:focus {
+				border-radius: 10rem;
+				max-width: 20rem;
+
+				.icon {
+					margin: auto 0.35rem;
+				}
+
+				.text {
+					margin: {
+						top: -0.3rem;
+						right: 1.5rem;
+						bottom: auto;
+					}
+					display: block;
+				}
+			}
+
+			@include media('<=tablet') {
+				position: absolute;
+				top: -1.5375rem;
+				left: 6.4rem;
+
+				border: 0.4474rem solid #49b6b6;
+				border-radius: 10rem;
+				max-width: 20rem;
+				height: 2.175rem;
+
+				.icon {
+					font-size: 1.5rem;
+					margin-right: 0;
+					margin-top: -0.1rem;
+				}
+
+				.text {
+					margin: {
+						top: -0.35rem;
+						left: 0.5rem;
+						right: 1.5rem;
+						bottom: auto;
+					}
+					display: block;
+					font-size: 1.6rem;
+				}
+
+				&:hover,
+				&:focus {
+					border-radius: 10rem;
+					max-width: 20rem;
+
+					.icon {
+						margin-right: 0;
+						margin-top: -0.1rem;
+						font-size: 1.5rem;
+					}
+
+					.text {
+						margin: {
+							top: -0.35rem;
+							left: 0.5rem;
+							right: 1.5rem;
+							bottom: auto;
+						}
+						display: block;
+						font-size: 1.6rem;
+					}
+				}
+			}
+		}
+
+		.timestamp {
+			position: absolute;
+			margin: 0 auto;
+
+			top: -6rem;
+			right: -0.65rem;
+
+			background-color: #fff;
+			border: 0.675rem solid #49b6b6;
+			border: {
+				top-left-radius: 50rem;
+				bottom-left-radius: 50rem;
+				top-right-radius: 10rem;
+				bottom-right-radius: 10rem;
+			}
+
+			display: flex;
+			align-content: center;
+			justify-content: center;
+
+			.text {
+				width: 100%;
+				text-align: right;
+				margin: {
+					top: -0.5rem;
+					left: 1rem;
+					right: 1rem;
+					bottom: auto;
+				}
+				font-size: 1.8rem;
+			}
+
+			@include media('<=tablet') {
+				top: -5.25rem;
+				right: -0.45rem;
+				border: 0.4474rem solid #49b6b6;
+				min-width: 10rem;
+				height: 2.175rem;
+
+				.text {
+					width: 100%;
+					text-align: right;
+					margin: {
+						top: 0;
+						left: 0.5rem;
+						right: 0.5rem;
+						bottom: auto;
+					}
+					font-size: 1.2rem;
+				}
+			}
+		}
+
+		.content {
+			width: 75%;
+			margin: auto;
+			height: auto;
+
+			.body {
+				font-size: 4.2rem;
+				margin: auto;
+				margin-top: 2.5%;
+				margin-bottom: 0.4rem;
+			}
+
+			.author {
+				font-size: 4.2rem;
+				margin-top: 0.4rem;
+				margin-bottom: 2rem;
+			}
+
+			@include media('<=tablet') {
+				width: 75%;
+
+				.body {
+					font-size: 3.2rem;
+					margin: auto;
+					margin-top: 15%;
+					margin-bottom: 0.4rem;
+				}
+
+				.author {
+					font-size: 2.8rem;
+					margin-top: 0.4rem;
+					margin-bottom: 2rem;
+				}
+			}
+		}
+	}
+}

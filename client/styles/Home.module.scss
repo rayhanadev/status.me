@@ -1,0 +1,11 @@
+@use 'utils/pallette' as *;
+@import 'include-media';
+
+.cardBox {
+	margin: 0;
+	margin-top: -5rem;
+
+	@include media('<=tablet') {
+		margin: 0;
+	}
+}
